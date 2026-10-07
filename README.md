@@ -6,7 +6,7 @@ A read-only research workspace for Panta prediction markets. Inspect exact marke
 
 Requires Node.js 22.9 or newer. No package installation is needed.
 
-Public source: <https://github.com/Krishna-10-7/panta-desk>. Colosseum project draft: <https://colosseum.com/arena/projects/panta-desk>.
+Public demo: <https://panta-desk.onrender.com>. Public source: <https://github.com/Krishna-10-7/panta-desk>. Colosseum project draft: <https://colosseum.com/arena/projects/panta-desk>.
 
 ```sh
 npm start
@@ -39,7 +39,7 @@ Live API validation uncovered opaque base64url cursors, null list prices, additi
 
 ## Submission preparation
 
-`SUBMISSION.md` contains an entry draft and demo script. Public GitHub source and the Colosseum draft are prepared. Hosting, recorded videos, founder details and final submission steps remain. No payout or acceptance is claimed.
+`SUBMISSION.md` contains an entry draft and demo script; `PITCH-SCRIPT.md` provides a separate pitch under two minutes. The public GitHub source, live Render demo and Colosseum draft are prepared. The logo, source and demo links are saved in Colosseum. Recorded videos, founder details and final submissions remain. No payout or acceptance is claimed.
 
 `render.yaml` describes a free Node web service that initially uses labeled sample data. A Render deployment can set the key privately and `PANTA_DEMO=false` to enable API reads. Do not put the key in the Blueprint, browser assets or repository. Free Render services can sleep during inactivity; allow time for startup when demonstrating.
 

@@ -1,6 +1,6 @@
 # Panta Desk — submission draft
 
-Prepared on 7 October 2026. This is a reviewable draft; no competition entry has been submitted. Replace the pending links and personal details before using it.
+Prepared on 7 October 2026. The public demo and source are available and a Colosseum draft has been saved; no final competition entry has been submitted. Replace the pending video links and personal details before submitting.
 
 ## Entry details
 
@@ -8,10 +8,10 @@ Prepared on 7 October 2026. This is a reviewable draft; no competition entry has
 | --- | --- |
 | Product | Panta Desk |
 | One-line description | A research workspace for comparing Panta prediction-market questions, rules, timing, and observed data. |
-| Stage | Local working prototype |
+| Stage | Public working prototype on free Render hosting |
 | Intended users | Prediction-market researchers and people comparing questions before deciding whether to participate |
 | Stack | Node.js 22.9+, browser JavaScript modules, HTML, CSS, Panta read API |
-| Public product URL | Pending — the current application runs locally |
+| Public product URL | https://panta-desk.onrender.com — public read-only demo; allow startup time after inactivity |
 | Repository URL | https://github.com/Krishna-10-7/panta-desk |
 | Presentation video | Pending — record and upload a separate pitch of up to 2 minutes (current portal limit) |
 | Product demo video | Pending — record and upload the demo below; keep it under 3 minutes |
@@ -50,9 +50,9 @@ This entry contributes the comparison and review interface, browser-local resear
 
 ### Current limitations
 
-The application currently runs on localhost and the source is published on GitHub. A deployed product URL and recorded videos are still pending. Authenticated live catalog, cursor pagination, detail and trade-sample reads were verified on 7 October 2026. A deployed environment will need its own configuration and verification.
+The application is deployed at https://panta-desk.onrender.com and the source is published on GitHub. The live key is configured privately in the Render server environment. Hosted live categories, catalog, detail and trade-sample reads, browser pagination from 20 to 40 rows, search and inspection were verified on 7 October 2026. Recorded videos, founder submission details and final submission remain pending. The free instance may need time to wake after inactivity.
 
-Data is a snapshot refreshed on request, not a streaming feed. Search is limited to loaded catalog pages. Watchlists and notes do not sync between devices or users. Checklist marks record a researcher's review; they do not certify evidence or market quality. No independent oracle verification, forecast validation, custom Solana program, or on-chain execution is implemented.
+Data is a snapshot refreshed on request, not a streaming feed. Market reads can reuse a snapshot for 30 seconds, and categories for five minutes; retrieval times are preserved. Search is limited to loaded catalog pages. Watchlists and notes do not sync between devices or users. Checklist marks record a researcher's review; they do not certify evidence or market quality. No independent oracle verification, forecast validation, custom Solana program, or on-chain execution is implemented.
 
 No customer adoption, revenue, or demand metrics are claimed. The repository contains automated tests; use the actual final command output when describing verification, and do not imply a production security audit.
 
