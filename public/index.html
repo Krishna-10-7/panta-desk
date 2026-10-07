@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare Panta market wording, closing dates, spot prices and recent activity in a research workspace.">
+  <title>Panta Desk · Market research</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#markets">Skip to markets</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">P</span><div><strong>Panta Desk</strong><span>Market research workspace</span></div></div>
+    <a href="https://www.panta.market/" target="_blank" rel="noopener noreferrer" class="attribution">Powered by Panta</a>
+  </header>
+  <main>
+    <div id="provenance" class="provenance" role="status">Checking data source…</div>
+    <section class="workspace-heading">
+      <div><p class="eyebrow">Your research desk</p><h1>Read the question.<br><span>Check the evidence.</span></h1></div>
+      <p class="intro">Compare exact market wording, closing times and recent activity. Keep your own review notes in one place.</p>
+    </section>
+    <section class="toolbar" aria-label="Find markets">
+      <div class="search-control"><label for="search">Search loaded markets</label><div class="search-input"><input type="search" id="search" placeholder="Search questions or descriptions" autocomplete="off"><button type="button" id="clear-search" class="clear" aria-label="Clear search" hidden>×</button></div></div>
+      <div><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div>
+      <div><label for="phase-filter">Market status</label><select id="phase-filter"><option value="">All statuses</option></select></div>
+      <label class="watch-toggle"><input type="checkbox" id="watch-only">Watchlist only</label>
+      <button type="button" class="button outline" id="refresh">Refresh data</button>
+    </section>
+    <div class="workspace">
+      <section id="markets" aria-labelledby="markets-heading">
+        <div class="section-title"><h2 id="markets-heading">Market library</h2><span id="result-count">Loading…</span></div>
+        <div id="catalog-message" class="message" role="status"></div>
+        <div id="market-list" class="market-list" aria-busy="true"></div>
+        <div class="pagination"><button type="button" id="load-more" class="button outline" hidden>Load more markets</button><span id="page-note"></span></div>
+      </section>
+      <aside class="research-panel" aria-labelledby="research-heading">
+        <div class="section-title"><h2 id="research-heading" tabindex="-1">Compare & review</h2><span id="selection-count">0 / 3</span></div>
+        <p class="panel-help">Select up to three markets from the library. <a href="#markets" class="library-return">Back to library</a></p>
+        <div id="selected-list" class="selected-list"></div>
+        <div id="review-empty" class="empty-panel"><span class="empty-glyph" aria-hidden="true">≍</span><h3>Put questions side by side</h3><p>A similar headline can have a different closing date or meaning. Open a market to inspect its exact wording.</p></div>
+        <div id="detail" hidden></div>
+        <button type="button" id="export" class="button primary export" disabled>Export research brief</button>
+        <p class="local-note">Watchlist, checks and notes stay in this browser. Prices are share prices, not verified forecasts.</p>
+      </aside>
+    </div>
+    <section id="comparison" class="comparison" hidden aria-labelledby="comparison-heading"><div class="section-title"><h2 id="comparison-heading">Compare the terms</h2><p>Dates are shown in UTC. Empty fields mean the API did not supply a value.</p></div><div id="comparison-grid" class="comparison-grid"></div></section>
+    <footer><span>Read-only research · no wallet connection required</span><a href="https://docs.panta.market/" target="_blank" rel="noopener noreferrer">Panta API documentation</a></footer>
+  </main>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

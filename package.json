@@ -1,0 +1,12 @@
+{
+  "name": "panta-due-diligence-desk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only market research prototype using the Panta API",
+  "engines": { "node": ">=22.9.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

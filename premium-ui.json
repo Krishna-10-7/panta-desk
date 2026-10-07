@@ -1,0 +1,8 @@
+{
+  "profile": "product",
+  "sourceRoots": ["public"],
+  "locale": "en-GB",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": ["Select/Listbox", "Scrollbar", "Toast"],
+  "ownership": {"Select/Listbox":"native"}
+}
