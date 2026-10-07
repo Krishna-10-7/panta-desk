@@ -12,8 +12,8 @@ Prepared on 7 October 2026. This is a reviewable draft; no competition entry has
 | Intended users | Prediction-market researchers and people comparing questions before deciding whether to participate |
 | Stack | Node.js 22.9+, browser JavaScript modules, HTML, CSS, Panta read API |
 | Public product URL | Pending — the current application runs locally |
-| Repository URL | Pending — no public repository has been created |
-| Presentation video | Pending — record and upload a separate 2–3 minute presentation |
+| Repository URL | https://github.com/Krishna-10-7/panta-desk |
+| Presentation video | Pending — record and upload a separate pitch of up to 2 minutes (current portal limit) |
 | Product demo video | Pending — record and upload the demo below; keep it under 3 minutes |
 | Colosseum project link | https://colosseum.com/arena/projects/panta-desk — draft created; final submission pending |
 | Founder/team names, location, experience | Entrant to supply accurate details |
@@ -50,7 +50,7 @@ This entry contributes the comparison and review interface, browser-local resear
 
 ### Current limitations
 
-The application currently runs on localhost. A deployed product URL, published repository, and recorded videos are still pending. Authenticated live catalog, cursor pagination, detail and trade-sample reads were verified on 7 October 2026. A deployed environment will need its own configuration and verification.
+The application currently runs on localhost and the source is published on GitHub. A deployed product URL and recorded videos are still pending. Authenticated live catalog, cursor pagination, detail and trade-sample reads were verified on 7 October 2026. A deployed environment will need its own configuration and verification.
 
 Data is a snapshot refreshed on request, not a streaming feed. Search is limited to loaded catalog pages. Watchlists and notes do not sync between devices or users. Checklist marks record a researcher's review; they do not certify evidence or market quality. No independent oracle verification, forecast validation, custom Solana program, or on-chain execution is implemented.
 
@@ -82,7 +82,7 @@ Record the real application. Keep its data-source banner visible. Use the releva
 | 2:10–2:35 | Export research brief; open the downloaded Markdown file | “The export preserves the questions, source labels, retrieval times, rules, links, and my notes. That gives me a review record I can keep or share.” |
 | 2:35–2:45 | Return to the workspace | “This prototype supports research without connecting a wallet. The next step is user feedback and verification of the production-data workflow.” |
 
-If a feature is unavailable in the response being demonstrated, show the application's missing-data state and explain it. Do not replace real API responses with samples while describing them as live. Record a separate presentation video covering the problem, target user, contribution, limitations, and proposed validation plan.
+If a feature is unavailable in the response being demonstrated, show the application's missing-data state and explain it. Do not replace real API responses with samples while describing them as live. Record a separate pitch of up to 2 minutes covering the entrant, problem, target user, contribution, limitations, and proposed validation plan. The current signed-in portal's 2-minute limit takes precedence over the broader public FAQ.
 
 ## Submission destinations and deadline
 

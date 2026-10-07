@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: panta-due-diligence-desk
+    runtime: node
+    plan: free
+    buildCommand: npm test
+    startCommand: npm start
+    healthCheckPath: /api/config
+    envVars:
+      - key: NODE_VERSION
+        value: 22.x
+      - key: HOST
+        value: 0.0.0.0
+      - key: PANTA_DEMO
+        value: "true"
+# First deployment uses labeled sample data. To enable actual API reads later,
+# add PANTA_API_KEY privately in Render and change PANTA_DEMO to "false".
+# Never add the API key to this file. Cache and request limits are per process.

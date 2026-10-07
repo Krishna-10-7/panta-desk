@@ -67,13 +67,20 @@ export function createDeskServer({ config = getConfig(), client, publicDir = PUB
   });
 }
 
+export function getListenOptions(env = process.env) {
+  const host = env.HOST === undefined ? '127.0.0.1' : env.HOST.trim();
+  if (!['127.0.0.1', '0.0.0.0'].includes(host)) throw new Error('HOST must be 127.0.0.1 or explicitly set to 0.0.0.0 for hosting.');
+  const port = env.PORT === undefined ? 4173 : Number(env.PORT);
+  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be an integer between 1 and 65535.');
+  return Object.freeze({ host, port });
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const config = getConfig();
-  const port = process.env.PORT ? Number(process.env.PORT) : 4173;
-  if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be an integer between 1 and 65535.');
+  const { host, port } = getListenOptions();
   const server = createDeskServer({ config });
-  server.listen(port, '127.0.0.1', () => {
-    console.log(`Panta research desk: http://127.0.0.1:${port} (${config.mode}; read-only)`);
+  server.listen(port, host, () => {
+    console.log(`Panta research desk: http://${host}:${port} (${config.mode}; read-only)`);
   });
   server.on('error', (error) => {
     console.error(error.code === 'EADDRINUSE' ? `Port ${port} is already in use.` : 'The local server could not start.');

@@ -3,7 +3,11 @@ import assert from 'node:assert/strict';
 import { once } from 'node:events';
 import { resolve } from 'node:path';
 import { createDeskServer, staticPath } from '../server.mjs';
-import { API_BASE, createPantaClient, getConfig, parseRoute } from '../lib/panta.mjs';
+import { API_BASE, createPantaClient as makePantaClient, getConfig, parseRoute } from '../lib/panta.mjs';
+import { createUpstreamBudget } from '../lib/read-controls.mjs';
+
+// Each fixture scenario owns a budget; one scenario's 429 must not cool down another.
+const createPantaClient = (options) => makePantaClient({ budget:createUpstreamBudget(), ...options });
 
 const MARKET = '11111111111111111111111111111111';
 const SANDBOX_MARKET = 'TestMarket1111111111111111111111111111111';

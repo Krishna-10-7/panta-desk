@@ -6,6 +6,8 @@ A read-only research workspace for Panta prediction markets. Inspect exact marke
 
 Requires Node.js 22.9 or newer. No package installation is needed.
 
+Public source: <https://github.com/Krishna-10-7/panta-desk>. Colosseum project draft: <https://colosseum.com/arena/projects/panta-desk>.
+
 ```sh
 npm start
 ```
@@ -22,6 +24,8 @@ The provided local preview has already been configured through a process environ
 
 The server calls the official Panta host with authenticated GET requests for categories, catalog pages, market detail and recent trade rows. The browser calls the local server; it never receives the credential. The proxy permits only these read paths and validated query parameters. It uses a bounded timeout/response size, sanitized errors and loopback binding. The project has no wallet connection, trade submission or market creation.
 
+Hosting can explicitly set `HOST=0.0.0.0` and use the platform's `PORT`. The local default stays `127.0.0.1`. Market reads may reuse a snapshot for 30 seconds; categories for five minutes. Concurrent identical reads share one request and cached responses retain their original retrieval timestamp. One process permits at most 100 upstream request starts per rolling minute and honors provider cooldowns. This limiter is in memory; multiple replicas or process restarts require a shared limiter before scaling.
+
 Live API validation uncovered opaque base64url cursors, null list prices, additional detail rule/source fields, block-time trade dates, and occasional stale list phase versus current detail phase. The app preserves these differences: detail fields carry their own timestamp and source, and resolved outcome values are labeled separately from share prices.
 
 ## Data limits
@@ -35,6 +39,8 @@ Live API validation uncovered opaque base64url cursors, null list prices, additi
 
 ## Submission preparation
 
-`SUBMISSION.md` contains an entry draft and demo script. Public GitHub source, a hosted demo, a recorded pitch and account/submission steps still need completion before entering the bounty. No payout or acceptance is claimed.
+`SUBMISSION.md` contains an entry draft and demo script. Public GitHub source and the Colosseum draft are prepared. Hosting, recorded videos, founder details and final submission steps remain. No payout or acceptance is claimed.
+
+`render.yaml` describes a free Node web service that initially uses labeled sample data. A Render deployment can set the key privately and `PANTA_DEMO=false` to enable API reads. Do not put the key in the Blueprint, browser assets or repository. Free Render services can sleep during inactivity; allow time for startup when demonstrating.
 
 Provider documentation: <https://docs.panta.market/>. Bounty: <https://superteam.fun/earn/listing/panta-api-side-track>. Powered by Panta.

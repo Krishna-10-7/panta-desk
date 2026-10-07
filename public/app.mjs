@@ -35,7 +35,7 @@ function applyProvenance(meta) {
   const banner = $('#provenance'); banner.classList.toggle('live',meta.mode === 'live');
   if (meta.mode === 'demo') banner.textContent = 'Sample data · local demonstration markets. Connect a Panta key to retrieve API data.';
   else if (meta.mode === 'sandbox') banner.textContent = 'Panta sandbox · the API returned test fixtures, not Solana mainnet markets.';
-  else banner.textContent = `Panta API · retrieved ${dateLabel(meta.retrievedAt)}. This snapshot does not update until you refresh.`;
+  else banner.textContent = `Panta API · retrieved ${dateLabel(meta.retrievedAt)}. Snapshots may be reused for 30 seconds; refresh to check again.`;
 }
 async function requestApi(path, signal) {
   const response = await fetch(path, { signal, cache:'no-store' });
@@ -55,6 +55,7 @@ async function loadCategories() {
   } catch (error) { announce('Categories unavailable. You can still browse all markets.'); }
 }
 async function loadCatalog(append = false) {
+  if (!append) { state.nextCursor=null; $('#load-more').hidden=true; }
   state.request?.abort(); const controller = new AbortController(); state.request = controller;
   state.loading = true; $('#market-list').setAttribute('aria-busy','true'); $('#refresh').disabled = true; $('#load-more').disabled = true;
   const message = $('#catalog-message'); message.classList.remove('error'); message.textContent = append ? 'Loading more markets…' : 'Loading markets…';

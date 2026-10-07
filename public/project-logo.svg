@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Panta Desk logo">
+  <rect width="512" height="512" fill="#eef2f7"/>
+  <rect x="128" y="76" width="256" height="256" rx="44" fill="#244edb"/>
+  <path d="M205 131h69c48 0 72 23 72 62s-25 63-73 63h-28v49h-40V131zm40 36v53h26c24 0 35-9 35-27s-11-26-35-26h-26z" fill="#fff"/>
+  <text x="256" y="407" text-anchor="middle" fill="#18283e" font-family="Segoe UI,Arial,sans-serif" font-size="44" font-weight="700">Panta Desk</text>
+  <text x="256" y="443" text-anchor="middle" fill="#546477" font-family="Segoe UI,Arial,sans-serif" font-size="20">Market research workspace</text>
+</svg>
